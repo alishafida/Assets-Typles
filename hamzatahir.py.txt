@@ -1,0 +1,36 @@
+class AssetType:
+    def __init__(self, asset_name, quantity):
+        self.asset_name = asset_name
+        self.quantity = quantity
+
+    def display_info(self):
+        print(f"Asset Name: {self.asset_name}")
+        print(f"Quantity: {self.quantity}")
+        print("------------------------")
+
+
+class GradeBook:
+    def __init__(self):
+        self.asset_types = []
+
+    def add_asset_type(self, asset_name, quantity):
+        asset = AssetType(asset_name, quantity)
+        self.asset_types.append(asset)
+
+    def display_assets(self):
+        print("Asset Types in Grade Book:")
+        for asset in self.asset_types:
+            asset.display_info()
+
+
+# Example Usage
+if __name__ == "__main__":
+    # Creating a GradeBook
+    grade_book = GradeBook()
+
+    # Adding asset types
+    grade_book.add_asset_type("Books", 50)
+    grade_book.add_asset_type("Computers", 20)
+
+    # Displaying asset types
+    grade_book.display_assets()
